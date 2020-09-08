@@ -67,5 +67,8 @@ cat
 head
 tail
 ctrl-c
->
+&gt;
 |
+nano
+find
+grep
