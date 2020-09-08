@@ -33,17 +33,17 @@ Assuming that happened, let's explore the ```learn-cli``` directory!
 
 ## Exploring, moving around, and making new things
 1. You're still probably hanging out in your home directory. Cool, let's say you want to stay there, but you also want to see what's in ```learn-cli``` &mdash; not a problem!<br />
-```> ls learn-cli``` &lt;- that's right, you can ```ls``` a different directory than you're currently working in<br />
-(Note: you used a ***relative path*** for that. You could do exactly the same thing with an absolute path: <br />
-```> ls ~/learn-cli``` )
-1. ```learn-cli``` has another directory inside it, called ```text_files``` &mdash; to look at that, you can just tack the subdirectory onto the previous command. **But don't type the whole command! Hit the up arrow on your keyboard.** That will bring up your previous command, and you can add ```/text_files``` to the end of it (the full command, then, will be ```ls learn-cli/text_files``` or, if you tried that absolute path up there, ```ls ~/learn-cli/text_files``` )<br />
-The up and down arrows let you scroll through your command history. This saves a lot of typing!
+```> ls learn-cli``` &lt;- that's right, you can ```ls``` a different directory than you're currently working in! <br />
+Note: you used a ***relative path*** for that. You could do exactly the same thing with an absolute path: <br />
+```> ls ~/learn-cli``` 
+1. ```learn-cli``` has another directory inside it, called ```text_files``` &mdash; to look at that, you can just tack the subdirectory onto the previous command. **But don't type the whole command! Hit the up arrow on your keyboard.** That will bring up your previous command, and you can **add ```/text_files``` to the end of it** (the full command, then, will be ```ls learn-cli/text_files``` or, if you tried that absolute path up there, it'll be ```ls ~/learn-cli/text_files``` )<br />
+**The up and down arrows let you scroll through your command history.** This saves a lot of typing!
 1. While we're talking about saving time and typing, do yourself a favor: type the following **but don't hit enter yet:**<br />
 ```> cd lear``` **now hit tab**<br />
 It should have autocompleted to ```cd learn-cli/``` and you can hit enter now. Your working directory is now ```~/learn-cli``` &mdash; if you try ```ls``` in here, you'll see the same things as you did when you listed the contents of this directory from outside of it.<br />
 That trick is called **tab completion,** and it serves two purposes:
-	1. It saves typing, of course. Really handy when you're dealing with long filenames.
-	1. It also serves as an error check. Type the following:<br />
+	a. It saves typing, of course. Really handy when you're dealing with long filenames.
+	a. It also serves as an error check. Type the following:<br />
 	```> cd lea``` and then hit "tab" - it honks at you and doesn't auto-complete, right? That's because there is no ```learn-cli``` directory inside the ```learn-cli``` directory! <br />
 	Go ahead and delete that command.
 1. Now, let's say we want a new file in this directory. Not a problem. We'll use the command ```touch``` to create the file. (There are other ways.)<br />
@@ -54,22 +54,41 @@ Notice that there is now a file called "birds_rock.txt" in this directory.
 ```> mkdir temp_dir```<br />
 ```> ls```<br />
 Now we have our new file, "birds_rock.txt" and our new directory, "temp_dir"
+1. I just want to remind you, here, that you can navigate up and down directories with relative pathing: <br />
+```> cd temp_dir``` &lt;- takes you into that nice new subdirectory <br />
+```> cd ..``` &lt;-brings you back up into ```learn-cli```
+
+## Moving things from one place to another
+1. What if we want "birds_rock.txt" to be in two places? **We can create a copy of the file in the same folder with a different name:** <br />
+```> cp birds_rock.txt birds_rock_copy.txt```<br />
+```> ls``` &lt;- just to confirm that we have birds_rock.txt _and_ birds_rock_copy.txt in this folder<br />
+1. **We can also create a copy of the file in a different folder (with any name we want):** <br />
+```> cp birds_rock.txt temp_dir/birds_rock.txt``` &lt;-creates a copy _with the same name_ inside the temp_dir folder<br />
+```> ls temp_dir``` &lt;- just to confirm that happened :) <br />
+```> cp birds_rock.txt temp_dir/birds_rock_temp.txt``` &lt;-creates a copy _with a different name_ inside the temp_dir folder<br />
+```> ls temp_dir``` &lt;- just to confirm that happened, again :) <br />
+1. Maybe unsurprisingly, we don't only have to reach _down_ the directory structure to create new files. We can also move _up_ the hierarchy. To keep your machine clean, though, let's change directory first: <br />
+```> cd temp_dir```  &lt;- now we're in ~/learn-cli/temp_dir <br />
+```> ls```  &lt;- just remind ourselves what's here <br />
+```> cp birds_rock_temp.txt ../``` &lt;- puts a copy of birds_rock_temp.txt into ~/learn-cli <br />
+That's right. If you aren't going to change the name of the file, you don't have to retype it when you're making a copy into another directory! (I usually do anyway. It doesn't hurt to be extra explicit with your directions when dealing with a computer.) But go ahead and confirm that it worked:
+```> ls ..```
+
 
 ## TODO:
-cd ..
-cp
-mv
-rm
-rmdir
-*
-warning about -rf
-less
-cat
-head
-tail
-ctrl-c
-&gt;
-|
-nano
-find
-grep
+
+* mv
+* rm
+* rmdir
+* ```*```
+* warning about -rf
+* less
+* cat
+* head
+* tail
+* ctrl-c
+* &gt;
+* |
+* nano
+* find
+* grep
