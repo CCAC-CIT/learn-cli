@@ -47,7 +47,7 @@ It should have autocompleted to ```cd learn-cli/``` and you can hit enter now. Y
 That trick is called **tab completion,** and it serves two purposes:
 	1. It saves typing, of course. Really handy when you're dealing with long filenames.
 	1. It also serves as an error check. Type the following:<br />
-	```> cd lea``` and then hit "tab" - it honks at you and doesn't auto-complete, right? That's because there is no ```learn-cli``` directory inside the ```learn-cli``` directory! <br />
+	```> cd lea``` **and then hit "tab"** - it honks at you and doesn't auto-complete, right? That's because there is no ```learn-cli``` directory inside the ```learn-cli``` directory! <br />
 	Go ahead and delete that command.
 1. Now, let's say we want a new file in this directory. Not a problem. We'll use the command ```touch``` to create the file. (There are other ways.)<br />
 ```> touch birds_rock.txt```<br />
@@ -79,8 +79,7 @@ That's right. If you aren't going to change the name of the file, you don't have
 1. All right, so we know how to copy things, which is great when we want the same thing in two different places. Sometimes, though, we just want the same thing, in a different place. In the CLI, **the move command (```mv```)** does what we think of as two different things in a GUI like Windows:
 	1. it moves files from one directory to another
 	1. it renames files
-	
-Let's say we want to rename the file "birds_rock_temp.txt" that we just moved into ```~/learn-cli```:<br />
+1. Let's say we want to rename the file "birds_rock_temp.txt" that we just moved into ```~/learn-cli```:<br />
 ```> cd ..```  (we could have skipped this; what would the next command look like, if we did?) <br />
 ```> mv birds_rock_temp.txt birds_really_rock.txt``` <br />
 ```> ls```<br /> 
