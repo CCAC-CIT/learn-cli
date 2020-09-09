@@ -25,7 +25,10 @@ This should give you a list of all of the files and directories inside your home
 Fiddle around with the flags until you get a version of ```ls``` that you like. Git Bash is a pretty friendly command line interface, with color-coding for different types of files, so I'm generally pretty happy with ```ls -a``` &mdash; unless I need to know file permissions for some reason, in which case I pop the ```l``` back on.
 
 ## Getting some files we'll need
-Now we're going to take a quick break from the command line. Using the browser of your choice, visit [the GitHub page that goes with this lesson](https://github.com/ccac-data-analytics/learn-cli) and **click the green button on the right hand side of the screen (it shows a downward-pointing arrow and the word "Code"), and then choose "Download ZIP."** Go ahead and save it; it doesn't matter too much where the zip file goes, but I want you to **unzip the file into your home directory.** (In my case, I'll save it into C:\\Users\\csheldon-hess\\, and I will let it create its own directory, called "learn-cli.")
+Now we're going to take a quick break from the command line. Using the browser of your choice, visit [the GitHub page that goes with this lesson](https://github.com/ccac-data-analytics/learn-cli) and **click the green button on the right hand side of the screen (it shows a downward-pointing arrow and the word "Code"), and then choose "Download ZIP."** Go ahead and save it; it doesn't matter too much where the zip file goes, but I want you to **unzip the file, and save its contents into a directory named "learn-cli" that sits in your home directory.** In my case, I had everything saved into C:\\Users\\csheldon-hess\\learn-cli, like so:
+
+![a screen shot showing learn-cli directory inside Windows Explorer; it has a subdirectory named "text_files," a docx file, and a file named README.md](http://sheldon-hess.org/images/learn-cli.png)
+
 
 What you want to happen is that, when you go back into your terminal and type ```ls``` from your home directory, there is a new directory there called "learn-cli" &mdash; if this isn't what happens, hit me up on Slack, and we'll talk through it. 
 
@@ -58,22 +61,28 @@ Now we have our new file, "birds_rock.txt" and our new directory, "temp_dir"
 ```> cd temp_dir``` &lt;- takes you into that nice new subdirectory <br />
 ```> cd ..``` &lt;-brings you back up into ```learn-cli```
 
-## Moving things from one place to another
-1. What if we want "birds_rock.txt" to be in two places? **We can create a copy of the file in the same folder with a different name:** <br />
+## Copying and moving things from one place to another
+1. What if we want "birds_rock.txt" to be in two places? **We can create a copy of the file in the same directory with a different name:** <br />
 ```> cp birds_rock.txt birds_rock_copy.txt```<br />
-```> ls``` &lt;- just to confirm that we have birds_rock.txt _and_ birds_rock_copy.txt in this folder<br />
-1. **We can also create a copy of the file in a different folder (with any name we want):** <br />
-```> cp birds_rock.txt temp_dir/birds_rock.txt``` &lt;-creates a copy _with the same name_ inside the temp_dir folder<br />
+```> ls``` &lt;- just to confirm that we have birds_rock.txt _and_ birds_rock_copy.txt in this directory<br />
+1. **We can also create a copy of the file in a different directory (with any name we want):** <br />
+```> cp birds_rock.txt temp_dir/birds_rock.txt``` &lt;-creates a copy _with the same name_ inside the temp_dir directory<br />
 ```> ls temp_dir``` &lt;- just to confirm that happened :) <br />
-```> cp birds_rock.txt temp_dir/birds_rock_temp.txt``` &lt;-creates a copy _with a different name_ inside the temp_dir folder<br />
+```> cp birds_rock.txt temp_dir/birds_rock_temp.txt``` &lt;-creates a copy _with a different name_ inside the temp_dir directory<br />
 ```> ls temp_dir``` &lt;- just to confirm that happened, again :) <br />
 1. Maybe unsurprisingly, we don't only have to reach _down_ the directory structure to create new files. We can also move _up_ the hierarchy. To keep your machine clean, though, let's change directory first: <br />
 ```> cd temp_dir```  &lt;- now we're in ~/learn-cli/temp_dir <br />
 ```> ls```  &lt;- just remind ourselves what's here <br />
 ```> cp birds_rock_temp.txt ../``` &lt;- puts a copy of birds_rock_temp.txt into ~/learn-cli <br />
-That's right. If you aren't going to change the name of the file, you don't have to retype it when you're making a copy into another directory! (I usually do anyway. It doesn't hurt to be extra explicit with your directions when dealing with a computer.) But go ahead and confirm that it worked:
+That's right. If you aren't going to change the name of the file, you don't have to retype it when you're making a copy into another directory! (I usually do anyway. It doesn't hurt to be extra explicit with your directions when dealing with a computer.) But go ahead and confirm that it worked: <br />
 ```> ls ..```
-
+1. All right, so we know how to copy things, which is great when we want the same thing in two different places. Sometimes, though, we just want the same thing, in a different place. In the CLI, **the move command (```mv```)** does what we think of as two different things in a GUI like Windows:
+	a. it moves files from one directory to another
+	a. it renames files
+Let's say we want to rename the file "birds_rock_temp.txt" that we just moved into ```~/learn-cli```:<br />
+```> cd ..```  (we could have skipped this; what would the next command look like, if we did?) <br />
+```> mv birds_rock_temp.txt birds_really_rock.txt``` <br />
+```> ls```<br />
 
 ## TODO:
 
