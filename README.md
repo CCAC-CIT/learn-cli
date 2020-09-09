@@ -83,12 +83,21 @@ Let's say we want to rename the file "birds_rock_temp.txt" that we just moved in
 ```> cd ..```  (we could have skipped this; what would the next command look like, if we did?) <br />
 ```> mv birds_rock_temp.txt birds_really_rock.txt``` <br />
 ```> ls```<br /> 
-There should now be a file named "birds_really_rock.txt" and NO file named "birds_rock_temp.txt"
+There should now be a file named "birds_really_rock.txt" and NO file named "birds_rock_temp.txt" inside of ```~/learn-cli```.
 1. Now, let's move "birds_really_rock.txt" into our temporary directory: <br />
 ```> mv birds_really_rock.txt temp_dir/```<br />
 ```> ls```  (it's gone from this directory, yes?)<br />
 ```> ls temp_dir``` (it's in there, yes?)
-1. 
+1. Moving directories works the same way as moving files. We're still working in ```~/learn-cli``` for this:<br />
+```> mv text_files great_texts``` <br />
+```> ls```  (to confirm the name changed) <br />
+```> mv temp_dir great_texts/```  <br />
+```> ls``` (is temp_dir gone?)<br />
+```> ls great_texts``` (is temp_dir inside great_texts?) <br />
+Now, let's actually put it back, shall we?<br />
+```> mv great_texts/temp_dir .``` &lt; I mentioned that ```..``` points at the directory above your current working directory, yes? _well,_ ```.``` points at your current working directory; you don't use it often, but here's a case where it makes sense.
+
+Now.
 
 Before we move on to deleting files, I have something important to tell you:
 
@@ -100,21 +109,22 @@ Never type that.
 ## Removing files and directories
 1. The command to remove a file is ```rm```. Let's say we want to get rid of one of the files we made a copy of, earlier. There should still be a file called "birds_rock.txt" inside of ```~/cli-files/temp_dir```. Like any of these other commands, we can pass an absolute or a relative path to the file we want to remove. So, assuming we're still working in ```~/learn-cli``` we can do <br />
 ```> rm temp_dir/birds_rock.txt``` (or, if we're elsewhere, we can fully specify the path: ```rm ~/learn-cli/temp_dir/birds_rock.txt```)
-1. The command to remove a directory is **not,** as you might imagine, the same as the command to remove a file. It has a special 
+1. The command to remove a directory is **not,** as you might imagine, the same as the command to remove a file. It is its own special command (which you can type, but it won't do anything): <br />
+```> rmdir temp_dir``` &lt;- this won't work because there are files in there<br />
+We could force it with the -f flag. But that's a little risky. The way I'd do it?<br />
+```> ls temp_dir``` &lt;- remind myself what's in here and confirm I don't need any of it<br />
+```> rm temp_dir/*``` &lt;- use a **wildcard character** to remove all of the files in the directory<br />
+```> rmdir temp_dir``` (and now, it should work, because it's an empty directory!)<br />
+And **that is it, it's gone &mdash; there is no Recycle Bin on the command line, no way to undo removing a file or directory.** So we do these things only with great care. (And, in this case, I mean, it was the plan all along; that's part of why I called it "temp_dir" from the start.)
 
 ## TODO:
-
-
-* rm
-* rmdir
-* ```*```
 * less
 * cat
 * head
 * tail
 * ctrl-c
-* &gt;
-* |
 * nano
 * find
 * grep
+* &gt;
+* |
