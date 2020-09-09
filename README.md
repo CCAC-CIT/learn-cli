@@ -92,8 +92,8 @@ There should now be a file named "birds_really_rock.txt" and NO file named "bird
 
 Before we move on to deleting files, I have something important to tell you:
 
-## Nobody who tells you to type ```rm -rf``` has your best interests at heart.
-## Never type that.
+## Nobody who tells you to type ```rm -rf``` has your best interests at heart.<br />
+Never type that.
 
 (There are exceptions. I've done it, for legitimate reasons. But I was **extremely careful** and, between you, me, and the 40 million other people who use GitHub, I was also _fairly anxious_ about it each time. ¯\\_(ツ)_/¯) 
 
