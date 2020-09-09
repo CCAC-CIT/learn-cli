@@ -30,7 +30,7 @@ Now we're going to take a quick break from the command line. Using the browser o
 ![a screen shot showing learn-cli directory inside Windows Explorer; it has a subdirectory named "text_files," a docx file, and a file named README.md](http://sheldon-hess.org/images/learn-cli.png)
 
 
-What you want to happen is that, when you go back into your terminal and type ```ls``` from your home directory, there is a new directory there called "learn-cli" &mdash; if this isn't what happens, hit me up on Slack, and we'll talk through it. 
+What you want to happen is that, when you go back into your terminal and type ```ls ~``` , there is a new directory there called "learn-cli" &mdash; if this isn't what happens, hit me up on Slack, and we'll talk through it. 
 
 Assuming that happened, let's explore the ```learn-cli``` directory!
 
@@ -45,8 +45,8 @@ Note: you used a ***relative path*** for that. You could do exactly the same thi
 ```> cd lear``` **now hit tab**<br />
 It should have autocompleted to ```cd learn-cli/``` and you can hit enter now. Your working directory is now ```~/learn-cli``` &mdash; if you try ```ls``` in here, you'll see the same things as you did when you listed the contents of this directory from outside of it.<br />
 That trick is called **tab completion,** and it serves two purposes:
-	a. It saves typing, of course. Really handy when you're dealing with long filenames.
-	a. It also serves as an error check. Type the following:<br />
+	1. It saves typing, of course. Really handy when you're dealing with long filenames.
+	1. It also serves as an error check. Type the following:<br />
 	```> cd lea``` and then hit "tab" - it honks at you and doesn't auto-complete, right? That's because there is no ```learn-cli``` directory inside the ```learn-cli``` directory! <br />
 	Go ahead and delete that command.
 1. Now, let's say we want a new file in this directory. Not a problem. We'll use the command ```touch``` to create the file. (There are other ways.)<br />
@@ -77,20 +77,37 @@ Now we have our new file, "birds_rock.txt" and our new directory, "temp_dir"
 That's right. If you aren't going to change the name of the file, you don't have to retype it when you're making a copy into another directory! (I usually do anyway. It doesn't hurt to be extra explicit with your directions when dealing with a computer.) But go ahead and confirm that it worked: <br />
 ```> ls ..```
 1. All right, so we know how to copy things, which is great when we want the same thing in two different places. Sometimes, though, we just want the same thing, in a different place. In the CLI, **the move command (```mv```)** does what we think of as two different things in a GUI like Windows:
-	a. it moves files from one directory to another
-	a. it renames files
+	1. it moves files from one directory to another
+	1. it renames files
 Let's say we want to rename the file "birds_rock_temp.txt" that we just moved into ```~/learn-cli```:<br />
 ```> cd ..```  (we could have skipped this; what would the next command look like, if we did?) <br />
 ```> mv birds_rock_temp.txt birds_really_rock.txt``` <br />
-```> ls```<br />
+```> ls```<br /> 
+There should now be a file named "birds_really_rock.txt" and NO file named "birds_rock_temp.txt"
+1. Now, let's move "birds_really_rock.txt" into our temporary directory: <br />
+```> mv birds_really_rock.txt temp_dir/```<br />
+```> ls```  (it's gone from this directory, yes?)<br />
+```> ls temp_dir``` (it's in there, yes?)
+1. 
+
+Before we move on to deleting files, I have something important to tell you:
+
+## Nobody who tells you to type ```rm -rf``` has your best interests at heart.
+## Never type that.
+
+(There are exceptions. I've done it, for legitimate reasons. But I was **extremely careful** and, between you, me, and the 40 million other people who use GitHub, I was also _fairly anxious_ about it each time. ¯\\_(ツ)_/¯) 
+
+## Removing files and directories
+1. The command to remove a file is ```rm```. Let's say we want to get rid of one of the files we made a copy of, earlier. There should still be a file called "birds_rock.txt" inside of ```~/cli-files/temp_dir```. Like any of these other commands, we can pass an absolute or a relative path to the file we want to remove. So, assuming we're still working in ```~/learn-cli``` we can do <br />
+```> rm temp_dir/birds_rock.txt``` (or, if we're elsewhere, we can fully specify the path: ```rm ~/learn-cli/temp_dir/birds_rock.txt```)
+1. The command to remove a directory is **not,** as you might imagine, the same as the command to remove a file. It has a special 
 
 ## TODO:
 
-* mv
+
 * rm
 * rmdir
 * ```*```
-* warning about -rf
 * less
 * cat
 * head
