@@ -79,6 +79,7 @@ That's right. If you aren't going to change the name of the file, you don't have
 1. All right, so we know how to copy things, which is great when we want the same thing in two different places. Sometimes, though, we just want the same thing, in a different place. In the CLI, **the move command (```mv```)** does what we think of as two different things in a GUI like Windows:
 	1. it moves files from one directory to another
 	1. it renames files
+	
 Let's say we want to rename the file "birds_rock_temp.txt" that we just moved into ```~/learn-cli```:<br />
 ```> cd ..```  (we could have skipped this; what would the next command look like, if we did?) <br />
 ```> mv birds_rock_temp.txt birds_really_rock.txt``` <br />
