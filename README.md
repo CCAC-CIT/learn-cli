@@ -131,7 +131,7 @@ Oh no. It's just sitting there, right, not giving you back your command prompt? 
 ```ctrl-c``` (that is, hold down the ctrl key and hit "c" - yes, even on a Mac).<br />
 Now you should get your prompt back. 
 1. So, ```head``` and ```tail``` are good for when you want to see _part_ of the file. We like them and can use them a lot. But sometimes you actually do want to see the entire file. For that, we have ```more``` and ```less```. In Git Bash, we only actually have ```less``` which sounds like a raw deal, but honestly? It's the more fully-featured of the two commands. In UNIX and Linux land, "```less``` really is more." :) <br />
-```less great_texts/the_raven.txt``` &lt;- this actually opens up a program inside the shell, and it will allow you to scroll through the entire file using your up and down arrows, page up, and page down. You're just reading the file&mdash;not editing it&mdash;but it's a nice way to browse a file's content. When you use ```man``` (on a different CLI, not in Git Bash, sorry), the manual pages also open in ```less```. **When you're finished browsing, hit ```q``` to close the ```less``` reader.**
+```> less great_texts/the_raven.txt``` &lt;- this actually opens up a program inside the shell, and it will allow you to scroll through the entire file using your up and down arrows, page up, and page down. You're just reading the file&mdash;not editing it&mdash;but it's a nice way to browse a file's content. When you use ```man``` (on a different CLI, not in Git Bash, sorry), the manual pages also open in ```less```. **When you're finished browsing, hit ```q``` to close the ```less``` reader.**
 
 ## Changing what's in our text files - ```nano```
 
@@ -140,8 +140,8 @@ If you want to open a text file _and change it_ you need what's called a "text e
 Let's get to it.
 
 1. First, let's open an existing file and make a change that we do NOT want to save.<br />
-```cd great_texts``` (not necessary, but it'll make the commands shorter to type)<br />
-```nano prejudice.txt```<br />
+```> cd great_texts``` (not necessary, but it'll make the commands shorter to type)<br />
+```> nano prejudice.txt```<br />
 Now ```nano``` should be open. You should be looking at the first chapter of _Pride and Prejudice._ Change something. Muddle it up. (Just start typing. Or hit your arrow keys to move the cursor around and type on something other than the first line. Experiment, and it's fine, because we won't be saving these changes anyway.) When you want to get out **without saving**, hit ```ctrl-x``` and then ```N``` (for NO, Do NOT save)
 1. If we want to go back in, we can hit the up arrow to bring up our previous command, ```nano prejudice.txt```, and then we can hit enter to go back into the editor and make new edits. Look at the bottom of the screen, and you can see what commands are available to you. The ```^X``` means "ctrl-x" and you can do ctrl-k to cut an entire line and then ctrl-u to paste it somewhere else. Ctrl-J, or "Justify,"
 will cause lines to wrap so that you can actually read them. There's a ton this editor will do, and I honestly don't use all of its features, myself. But (sorry, this is a bit of a rant of mine) ```nano``` is actually a pretty great editor.
