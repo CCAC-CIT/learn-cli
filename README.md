@@ -117,13 +117,47 @@ We could force it with the -f flag. But that's a little risky. The way I'd do it
 ```> rmdir temp_dir``` (and now, it should work, because it's an empty directory!)<br />
 And **that is it, it's gone &mdash; there is no Recycle Bin on the command line, no way to undo removing a file or directory.** So we do these things only with great care. (And, in this case, I mean, it was the plan all along; that's part of why I called it "temp_dir" from the start.)
 
+## Finding out what's in our text files
+
+1. We have a number of options for looking at text files when we're working on the CLI. If you just want to see the beginning of a file, you can use the ```head``` command:<br />
+```> head great_texts/prejudice.txt``` &lt;- shows us the first 10 lines of the file (the default) <br /> 
+```> head -n 100 great_texts/prejudice.txt``` &lt;- we can specify how many lines; in this case, we're looking at the first 100 
+1. If you just want to look at the end of the file, there's also a command for that:<br />
+```> tail great_texts/human_rights.txt``` &lt;- the last 10 lines of the file (the default) <br /> 
+```> tail -n 20 great_texts/human_rights.txt``` &lt;- the last 20 lines of the file; we can put in any number we want<br /> 
+```> tail -f great_texts/human_rights.txt```<br />
+Oh no. It's just sitting there, right, not giving you back your command prompt? Yeah, so the ```-f``` flag watches the end of a file _continuously_ &mdash; not something that's especially useful if you're looking at a text file just saved on the machine somewhere, _but_ if you have a log file for a web server or something, and you want to see changes as they come in, this is perfect for that. 
+1. This gives me a chance to teach you **how to end a command part-way through execution**:<br />
+```ctrl-c``` (that is, hold down the ctrl key and hit "c" - yes, even on a Mac).<br />
+Now you should get your prompt back. 
+1. So, ```head``` and ```tail``` are good for when you want to see _part_ of the file. We like them and can use them a lot. But sometimes you actually do want to see the entire file. For that, we have ```more``` and ```less```. In Git Bash, we only actually have ```less``` which sounds like a raw deal, but honestly? It's the more fully-featured of the two commands. In UNIX and Linux land, "```less``` really is more." :) <br />
+```less great_texts/the_raven.txt``` &lt;- this actually opens up a program inside the shell, and it will allow you to scroll through the entire file using your up and down arrows, page up, and page down. You're just reading the file&mdash;not editing it&mdash;but it's a nice way to browse a file's content. When you use ```man``` (on a different CLI, not in Git Bash, sorry), the manual pages also open in ```less```. **When you're finished browsing, hit ```q``` to close the ```less``` reader.**
+
+## Changing what's in our text files - ```nano```
+
+If you want to open a text file _and change it_ you need what's called a "text editor." You'll meet people who want you to believe that ```vim``` or ```emacs``` or whatever is the only text editor you should ever use, but those folks are being snobs. If you're on the command line every day, it will likely eventually be worth your time to learn the ins and outs of a fancy text editor. But if you're only going to be using the command line occasionally? You don't need all that. I'm going to teach you what I think is the easiest text editor on the command line&mdash;easy in part because its menu of options is visible the whole time you're using it, so there's no memorization required. It's also available in almost every CLI I've had occasion to use. And if you ever decide you're going to check your email on the command line (a thing I've actually had to do, in the past), one of the more popular CLI mail applications uses ```pico```, which is ```nano```'s closest relative.
+
+Let's get to it.
+
+1. First, let's open an existing file and make a change that we do NOT want to save.<br />
+```cd great_texts``` (not necessary, but it'll make the commands shorter to type)<br />
+```nano prejudice.txt```<br />
+Now ```nano``` should be open. You should be looking at the first chapter of _Pride and Prejudice._ Change something. Muddle it up. (Just start typing. Or hit your arrow keys to move the cursor around and type on something other than the first line. Experiment, and it's fine, because we won't be saving these changes anyway.) When you want to get out **without saving**, hit ```ctrl-x``` and then ```N``` (for NO, Do NOT save)
+1. If we want to go back in, we can hit the up arrow to bring up our previous command, ```nano prejudice.txt```, and then we can hit enter to go back into the editor and make new edits. Look at the bottom of the screen, and you can see what commands are available to you. The ```^X``` means "ctrl-x" and you can do ctrl-k to cut an entire line and then ctrl-u to paste it somewhere else. Ctrl-J, or "Justify,"
+will cause lines to wrap so that you can actually read them. There's a ton this editor will do, and I honestly don't use all of its features, myself. But (sorry, this is a bit of a rant of mine) ```nano``` is actually a pretty great editor.
+1. Let's edit the first line so that instead of "It is a truth universally acknowledged...," it instead says "It is not, actually, a truth universally acknowledged..."; now, you want to close and save. ```ctrl-x``` will start the process of closing. "Y" will tell it you want to save, and then it will ask whether you want to save this file under its existing name&mdash;or you have the option to rename it, here. Let's go ahead and save it in the same place by hitting enter. 
+1. You can also use ```nano``` to create new text files! <br />
+```> nano my_text_file.txt``` &lt;- opens a brand new, empty text file named "my_text_file.txt"<br />
+Type your favorite line from poetry or literature. Anything. Whatever comes to mind. Exit and save. Congrats! You just made a text file!
+
+It's worth mentioning: you can also write code in ```nano```. It does syntax highlighting, just like GUI-based text editors like Sublime and Atom.
+
+
+
+
+
 ## TODO:
-* less
-* cat
-* head
-* tail
-* ctrl-c
-* nano
+
 * find
 * grep
 * &gt;
