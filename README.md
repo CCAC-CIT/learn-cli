@@ -1,7 +1,7 @@
 Intro to the Command Line
 =========================
 
-License and information for teachers are [at the bottom of this file](#teachers).
+License and information for instructors are [at the bottom of this file](#teachers).
 
 ## Assumptions: 
 1. If you're on Windows, you have downloaded and installed Git Bash (which comes with [Git for Windows](https://gitforwindows.org/)). If you're on a Mac or Linux machine you won't need to bother&mdash;you already have a Linux-style command line interface.
@@ -155,18 +155,19 @@ Type your favorite line from poetry or literature. Anything. Whatever comes to m
 It's worth mentioning: you can also write code in ```nano```. It does syntax highlighting, just like GUI-based text editors like Sublime and Atom.
 
 
-## <span id="teachers">Information for teachers</span>:
+## <span id="teachers">Information for instructors and license info</span>:
 This is meant to be a gentle introduction to the Linux-style command line, with a focus on file manipulation and understanding relative vs. absolute paths.
 
 It was built with intro to programming students in mind.
 
-There are [slides](https://docs.google.com/presentation/d/14oisMTEG-O-_DnHSfBRCLsuRq041VnJt9qFOAiVhdpI/edit?usp=sharing) and also [a set of practice exercises](the_exercise.md) included, and it is designed to work remotely, with learners on a variety of different systems. The whole thing&mdash;slides plus practice exercises&mdash;takes on the order of 2.5-3 hours to get through with people who have not used a command line interface before.
+There are [slides](https://docs.google.com/presentation/d/14oisMTEG-O-_DnHSfBRCLsuRq041VnJt9qFOAiVhdpI/edit?usp=sharing) and also a set of practice exercises (all in README.md) included, and it is designed to work remotely, with learners on a variety of different systems. The whole thing&mdash;slides plus practice exercises&mdash;takes on the order of 2.5-3 hours to get through with people who have not used a command line interface before.
 
-This is all my own (Coral Sheldon-Hess's) work, with the exception of several ideas and some slides I borrowed from a workshop put on by Eric Phetteplace and me back in 2016. 
+This is all my own (Coral Sheldon-Hess's) work, with the exception of several ideas and some slides I borrowed from a [workshop](https://github.com/csheldonhess/c4l16-cli-workshop) that Eric Phetteplace and I ran back in 2016. 
 
-It is all CC-BY-SA licensed, and I would ask that you please let me know if you're using it&mdash;because it makes me happy to know when I've created a tutorial someone else finds useful! 
+It is all [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) licensed, and I would ask that you please let me know if you're using it&mdash;because it makes me happy to know when I've created a tutorial someone else finds useful! 
 
-## TODO:
+
+## TODO (pull requests welcome ;)):
 
 * find
 * grep
