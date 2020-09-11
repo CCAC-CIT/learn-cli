@@ -156,7 +156,7 @@ It's worth mentioning: you can also write code in ```nano```. It does syntax hig
 
 
 ## <span id="teachers">Information for instructors and license info</span>:
-This is meant to be a gentle introduction to the Linux-style command line, with a focus on file manipulation and understanding relative vs. absolute paths.
+This is meant to be a gentle introduction to the Linux-style command line interface, with a focus on file manipulation and understanding relative vs. absolute paths.
 
 It was built with intro to programming students in mind.
 
